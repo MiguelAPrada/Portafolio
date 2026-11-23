@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miguel Ángel Prada Álvarez · Técnico de soporte TI junior</title>
+  <meta name="description" content="Portafolio profesional de Miguel Ángel Prada Álvarez. Técnico de soporte TI junior con formación en mecatrónica, soporte técnico, redes con subredes y bases de datos SQL.">
+
+  <!-- Metadatos Open Graph para compartir enlace con vista previa limpia -->
+  <meta property="og:title" content="Miguel Ángel Prada Álvarez · Técnico de soporte TI junior">
+  <meta property="og:description" content="Formación en mecatrónica y soporte técnico con enfoque práctico en diagnóstico de equipos, redes con subredes, bases de datos SQL y atención organizada de incidencias.">
+  <meta property="og:type" content="website">
+
+  <!-- Tipografías Google Fonts: Manrope (títulos e indicadores) y Source Sans 3 (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. PALETA DE COLORES Y VARIABLES DE DISEÑO (:root)
+       ========================================================================== */
+    :root {
+      --bg: #ffffff;
+      --suave: #f3f6fa;
+      --tinta: #0f1b2d;
+      --gris: #5d6b7e;
+      --linea: #e2e8f0;
+      --navy: #0b2545;
+      --acento: #13a89e;
+
+      /* Tonos de apoyo derivados de la paleta */
+      --navy-hover: #143661;
+      --acento-dark: #0e847c;
+      --radius: 14px;
+      --shadow-sm: 0 2px 10px rgba(11, 37, 69, 0.05);
+      --shadow-md: 0 14px 32px rgba(11, 37, 69, 0.09);
+      --nav-h: 74px;
+      --max-w: 1140px;
+    }
+
+    /* ==========================================================================
+       2. REINICIO BASE, TIPOGRAFÍA Y ACCESIBILIDAD
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-h) + 18px);
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--tinta);
+      line-height: 1.62;
+      font-size: clamp(0.95rem, 0.35vw + 0.88rem, 1.05rem);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    /* Foco visible de alto contraste en todos los enlaces y botones */
+    :focus-visible {
+      outline: 3px solid var(--acento);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 clamp(0.95rem, 4vw, 2rem);
+    }
+
+    /* ==========================================================================
+       3. BARRA DE NAVEGACIÓN FIJA (STICKY) Y MENÚ MÓVIL (360px+)
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      min-height: var(--nav-h);
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--linea);
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.65rem;
+      padding-top: 0.55rem;
+      padding-bottom: 0.55rem;
+      position: relative;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      min-width: 0;
+    }
+
+    /* Recuadro azul marino con iniciales MP */
+    .brand-monogram {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      background-color: var(--navy);
+      color: #ffffff;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 0.94rem;
+      letter-spacing: 0.04em;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-bottom: 3px solid var(--acento);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand-name {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: clamp(0.86rem, 1.3vw, 0.98rem);
+      color: var(--navy);
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand-subtitle {
+      font-size: 0.79rem;
+      font-weight: 600;
+      color: var(--gris);
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--gris);
+      padding: 0.5rem 0.8rem;
+      border-radius: 10px;
+      transition: color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--navy);
+      background-color: var(--suave);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--navy);
+      color: #ffffff;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 0.86rem;
+      padding: 0.52rem 1rem;
+      min-height: 40px;
+      border-radius: 10px;
+      margin-left: 0.25rem;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background-color: var(--acento-dark);
+      transform: translateY(-1px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--linea);
+      background-color: var(--bg);
+      color: var(--navy);
+      place-items: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .mobile-toggle:hover {
+      background-color: var(--suave);
+    }
+
+    /* ==========================================================================
+       4. HERO DIVIDIDO (2 COLUMNAS EN ESCRITORIO, 1 EN MÓVIL)
+       ========================================================================== */
+    .hero {
+      padding: clamp(2.3rem, 5.5vw, 4.4rem) 0 clamp(2.4rem, 5vw, 4rem);
+      background: linear-gradient(180deg, var(--suave) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--linea);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.24fr 0.96fr;
+      gap: clamp(1.75rem, 4vw, 3rem);
+      align-items: center;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background-color: var(--bg);
+      border: 1px solid var(--linea);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.83rem;
+      padding: 0.42rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.1rem;
+      box-shadow: var(--shadow-sm);
+      max-width: 100%;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: var(--acento);
+      box-shadow: 0 0 0 3px rgba(19, 168, 158, 0.22);
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 4.2vw, 3rem);
+      font-weight: 800;
+      line-height: 1.13;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-role {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(1.04rem, 1.8vw, 1.26rem);
+      font-weight: 700;
+      color: var(--acento-dark);
+      margin-bottom: 1.05rem;
+    }
+
+    .hero-summary {
+      font-size: clamp(1rem, 1.35vw, 1.13rem);
+      color: var(--gris);
+      max-width: 610px;
+      margin-bottom: 1.7rem;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 0.8rem 1.4rem;
+      min-height: 46px;
+      border-radius: 11px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--navy);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--navy-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg);
+      color: var(--navy);
+      border-color: var(--linea);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--navy);
+      background-color: var(--suave);
+      transform: translateY(-2px);
+    }
+
+    /* Tarjeta oscura azul marino "Resumen profesional" */
+    .summary-card {
+      background-color: var(--navy);
+      color: #ffffff;
+      border-radius: calc(var(--radius) + 4px);
+      padding: clamp(1.35rem, 3vw, 1.95rem);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summary-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--acento), #38bdf8);
+    }
+
+    .summary-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding-bottom: 0.95rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .summary-card-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .summary-badge {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #5eead4;
+      background-color: rgba(19, 168, 158, 0.18);
+      border: 1px solid rgba(19, 168, 158, 0.42);
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .kpi-stack {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .kpi-row {
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+      background-color: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+    }
+
+    .kpi-value {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(1.65rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: #5eead4;
+      line-height: 1;
+      min-width: 2rem;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .kpi-desc {
+      font-size: 0.93rem;
+      color: #e2e8f0;
+      line-height: 1.42;
+    }
+
+    /* ==========================================================================
+       5. ESTILOS COMUNES DE SECCIÓN
+       ========================================================================== */
+    .section {
+      padding: clamp(2.7rem, 6vw, 4.65rem) 0;
+    }
+
+    .section-alt {
+      background-color: var(--suave);
+      border-top: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+    }
+
+    .section-header {
+      margin-bottom: clamp(1.55rem, 3.5vw, 2.3rem);
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.79rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--acento-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.5rem, 3.1vw, 2.12rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.22;
+    }
+
+    /* ==========================================================================
+       6. SECCIÓN #HABILIDADES (5 TARJETAS CON EVIDENCIA Y ENLACE A CASO)
+       ========================================================================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-card {
+      background-color: var(--bg);
+      border: 1px solid var(--linea);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--acento);
+    }
+
+    .skill-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .skill-index {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 0.82rem;
+      color: #ffffff;
+      background-color: var(--navy);
+      padding: 0.24rem 0.62rem;
+      border-radius: 8px;
+    }
+
+    .skill-type {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--acento-dark);
+      background-color: rgba(19, 168, 158, 0.12);
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    .skill-card h3 {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.32;
+    }
+
+    .skill-summary {
+      font-size: 0.95rem;
+      color: var(--gris);
+      line-height: 1.56;
+    }
+
+    .evidence-block {
+      background-color: var(--suave);
+      border-left: 3px solid var(--acento);
+      border-radius: 0 10px 10px 0;
+      padding: 0.78rem 0.92rem;
+    }
+
+    .evidence-title {
+      display: block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .evidence-block p {
+      font-size: 0.91rem;
+      color: var(--tinta);
+      line-height: 1.5;
+    }
+
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tool-chip {
+      font-size: 0.79rem;
+      font-weight: 600;
+      color: var(--navy);
+      background-color: var(--suave);
+      border: 1px solid var(--linea);
+      padding: 0.24rem 0.6rem;
+      border-radius: 7px;
+    }
+
+    .skill-foot {
+      margin-top: auto;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--linea);
+    }
+
+    .skill-case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--acento-dark);
+      transition: color 0.2s ease, gap 0.2s ease;
+    }
+
+    .skill-case-link:hover {
+      color: var(--navy);
+      gap: 0.55rem;
+    }
+
+    /* ==========================================================================
+       7. SECCIÓN #CASOS (3 TARJETAS HORIZONTALES: RETO, ACCIÓN Y RESULTADO)
+       ========================================================================== */
+    .cases-list {
+      display: grid;
+      gap: 1.45rem;
+    }
+
+    .case-card {
+      background-color: var(--bg);
+      border: 1px solid var(--linea);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 245px 1fr;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--navy);
+    }
+
+    .case-sidebar {
+      background-color: var(--navy);
+      color: #ffffff;
+      padding: 1.45rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      border-right: 4px solid var(--acento);
+    }
+
+    .case-date {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.77rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      line-height: 1.35;
+    }
+
+    .case-metric {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(1.5rem, 2.3vw, 1.9rem);
+      font-weight: 800;
+      color: #5eead4;
+      line-height: 1.15;
+      margin-bottom: 0.35rem;
+    }
+
+    .case-metric-sub {
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      line-height: 1.42;
+    }
+
+    .case-main {
+      padding: clamp(1.25rem, 3vw, 1.7rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .case-main h3 {
+      font-size: clamp(1.12rem, 1.7vw, 1.3rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .case-triad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+    }
+
+    .triad-box {
+      background-color: var(--suave);
+      border: 1px solid var(--linea);
+      border-radius: 11px;
+      padding: 0.9rem 1rem;
+    }
+
+    .triad-box-result {
+      background-color: rgba(19, 168, 158, 0.08);
+      border-color: rgba(19, 168, 158, 0.35);
+    }
+
+    .triad-label {
+      display: block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .triad-box-result .triad-label {
+      color: var(--acento-dark);
+    }
+
+    .triad-box p {
+      font-size: 0.92rem;
+      color: var(--gris);
+      line-height: 1.54;
+    }
+
+    .triad-box-result p {
+      color: var(--tinta);
+      font-weight: 600;
+    }
+
+    .case-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--linea);
+    }
+
+    .case-tags-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gris);
+      margin-right: 0.2rem;
+    }
+
+    .skill-anchor-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      background-color: var(--suave);
+      border: 1px solid var(--linea);
+      padding: 0.28rem 0.72rem;
+      border-radius: 999px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .skill-anchor-tag:hover {
+      background-color: var(--navy);
+      border-color: var(--navy);
+      color: #ffffff;
+    }
+
+    /* Resaltado temporal al navegar mediante enlaces internos */
+    .anchor-focus {
+      box-shadow: 0 0 0 3px var(--acento), var(--shadow-md) !important;
+    }
+
+    /* ==========================================================================
+       8. SECCIÓN #TRAYECTORIA (LÍNEA DE TIEMPO VERTICAL CON ACENTO VERDE AZULADO)
+       ========================================================================== */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      max-width: 880px;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 3px;
+      background-color: var(--linea);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .timeline-line-fill {
+      width: 100%;
+      height: 0%;
+      background: linear-gradient(180deg, var(--acento) 0%, var(--navy) 100%);
+      transition: height 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .timeline.active .timeline-line-fill {
+      height: 100%;
+    }
+
+    .timeline-list {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      background-color: var(--bg);
+      border: 1px solid var(--linea);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.45rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -2rem;
+      top: 1.4rem;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background-color: var(--bg);
+      border: 4px solid var(--acento);
+      box-shadow: 0 0 0 2px var(--navy);
+    }
+
+    .timeline-date {
+      display: inline-block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.79rem;
+      font-weight: 800;
+      color: var(--acento-dark);
+      background-color: rgba(19, 168, 158, 0.12);
+      padding: 0.22rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 0.45rem;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.28rem;
+    }
+
+    .timeline-item p {
+      font-size: 0.95rem;
+      color: var(--gris);
+    }
+
+    /* ==========================================================================
+       9. SECCIÓN #CONTACTO (BLOQUE AZUL MARINO REDONDEADO)
+       ========================================================================== */
+    .contact-panel {
+      background-color: var(--navy);
+      color: #ffffff;
+      border-radius: calc(var(--radius) + 6px);
+      padding: clamp(2rem, 5vw, 3.3rem);
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--acento), #38bdf8);
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(1.5rem, 3.2vw, 2.18rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-copy {
+      font-size: clamp(0.98rem, 1.4vw, 1.12rem);
+      color: #cbd5e1;
+      max-width: 630px;
+      margin: 0 auto 1.85rem;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+
+    .btn-accent {
+      background-color: var(--acento);
+      color: #ffffff;
+    }
+
+    .btn-accent:hover {
+      background-color: var(--acento-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost-light {
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    .btn-ghost-light:hover {
+      background-color: rgba(255, 255, 255, 0.16);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .btn-copy-email {
+      background-color: #ffffff;
+      color: var(--navy);
+    }
+
+    .btn-copy-email:hover {
+      background-color: var(--suave);
+      transform: translateY(-2px);
+    }
+
+    .btn-copy-email.is-copied {
+      background-color: var(--acento);
+      color: #ffffff;
+    }
+
+    .contact-email-text {
+      margin-top: 1.2rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #94a3b8;
+      word-break: break-all;
+    }
+
+    /* ==========================================================================
+       10. PIE DE PÁGINA
+       ========================================================================== */
+    .footer {
+      border-top: 1px solid var(--linea);
+      background-color: var(--bg);
+      padding: 1.6rem 0;
+      text-align: center;
+      color: var(--gris);
+      font-size: 0.9rem;
+    }
+
+    /* ==========================================================================
+       11. ANIMACIONES SUTILES Y PREFERS-REDUCED-MOTION
+       ========================================================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .timeline-line-fill {
+        height: 100%;
+        transition: none;
+      }
+      .btn, .skill-card, .case-card, .nav-cta, .skill-anchor-tag {
+        transition: none;
+      }
+    }
+
+    /* ==========================================================================
+       12. RESPONSIVE (TABLET Y MÓVIL DESDE 360px)
+       ========================================================================== */
+    @media (max-width: 920px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-card {
+        grid-template-columns: 1fr;
+      }
+
+      .case-sidebar {
+        border-right: none;
+        border-bottom: 4px solid var(--acento);
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .case-triad {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .mobile-toggle {
+        display: grid;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 0.45rem);
+        left: 0;
+        right: 0;
+        background-color: var(--bg);
+        border: 1px solid var(--linea);
+        border-radius: 14px;
+        padding: 0.65rem;
+        flex-direction: column;
+        align-items: stretch;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .nav-link {
+        padding: 0.7rem 0.9rem;
+      }
+
+      .nav-cta {
+        padding: 0.48rem 0.8rem;
+        font-size: 0.82rem;
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .brand-subtitle {
+        display: none;
+      }
+
+      .brand-monogram {
+        width: 38px;
+        height: 38px;
+        font-size: 0.86rem;
+      }
+
+      .hero-actions .btn,
+      .contact-buttons .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. BARRA DE NAVEGACIÓN FIJA (STICKY)
+       ======================================================================== -->
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="container navbar-inner">
+      <a href="#inicio" class="brand" aria-label="Ir al inicio - Miguel Ángel Prada Álvarez">
+        <span class="brand-monogram" aria-hidden="true">MP</span>
+        <span class="brand-text">
+          <span class="brand-name">Miguel Ángel Prada Álvarez</span>
+          <span class="brand-subtitle">Técnico de soporte TI junior</span>
+        </span>
+      </a>
+
+      <div class="nav-controls">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="#casos" class="nav-link">Casos</a></li>
+          <li><a href="#trayectoria" class="nav-link">Trayectoria</a></li>
+        </ul>
+
+        <a href="#contacto" class="nav-cta">Contactar</a>
+
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú de navegación">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       2. HERO DIVIDIDO (2 COLUMNAS EN ESCRITORIO, 1 EN MÓVIL)
+       ======================================================================== -->
+  <header id="inicio" class="hero">
+    <div class="container hero-grid">
+      <!-- Columna izquierda -->
+      <div>
+        <div class="status-pill">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Disponible para oportunidades en TI</span>
+        </div>
+
+        <h1>Miguel Ángel Prada Álvarez</h1>
+        <p class="hero-role">Técnico de soporte TI junior</p>
+
+        <p class="hero-summary">
+          Formación en mecatrónica y soporte técnico con enfoque práctico en diagnóstico de equipos, redes con subredes, bases de datos SQL y atención organizada de incidencias para empresas de tecnología.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#habilidades" class="btn btn-primary">Ver habilidades</a>
+          <a href="#casos" class="btn btn-secondary">Ver casos</a>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Tarjeta oscura azul marino "Resumen profesional" -->
+      <aside class="summary-card" aria-label="Resumen profesional">
+        <div class="summary-card-head">
+          <span class="summary-card-title">Resumen profesional</span>
+          <span class="summary-badge">Perfil TI</span>
+        </div>
+
+        <div class="kpi-stack">
+          <div class="kpi-row">
+            <span class="kpi-value" data-count="3">3</span>
+            <span class="kpi-desc">proyectos prácticos implementados (redes, bases de datos y soporte técnico)</span>
+          </div>
+          <div class="kpi-row">
+            <span class="kpi-value" data-count="5">5</span>
+            <span class="kpi-desc">habilidades técnicas y personales demostradas</span>
+          </div>
+          <div class="kpi-row">
+            <span class="kpi-value" data-count="2">2</span>
+            <span class="kpi-desc">idiomas: Español (Nativo) e Inglés (Nivel 2)</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         3. SECCIÓN #HABILIDADES ("Habilidades respaldadas por resultados")
+         ====================================================================== -->
+    <section id="habilidades" class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Competencias comprobadas</span>
+          <h2>Habilidades respaldadas por resultados</h2>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Habilidad 01 -->
+          <article class="skill-card" id="h-mantenimiento">
+            <div class="skill-head">
+              <span class="skill-index">01</span>
+              <span class="skill-type">Técnica</span>
+            </div>
+            <h3>Diagnóstico y mantenimiento de equipos</h3>
+            <p class="skill-summary">
+              Mantenimiento preventivo y correctivo según cada caso con protocolos de prueba y entrega.
+            </p>
+            <div class="evidence-block">
+              <span class="evidence-title">Evidencia</span>
+              <p>Documentación técnica detallada desde el paso uno hasta el acta de entrega.</p>
+            </div>
+            <div class="tools-list" aria-label="Herramientas">
+              <span class="tool-chip">Ensamblaje</span>
+              <span class="tool-chip">Diagnóstico</span>
+              <span class="tool-chip">Mantenimiento</span>
+              <span class="tool-chip">Documentación técnica</span>
+            </div>
+            <div class="skill-foot">
+              <a href="#p-soporte" class="skill-case-link">Ver caso aplicado <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- Habilidad 02 -->
+          <article class="skill-card" id="h-redes">
+            <div class="skill-head">
+              <span class="skill-index">02</span>
+              <span class="skill-type">Técnica</span>
+            </div>
+            <h3>Redes y simulación (Cisco Packet Tracer)</h3>
+            <p class="skill-summary">
+              Diseño, segmentación por subredes y configuración de infraestructura cableada e inalámbrica.
+            </p>
+            <div class="evidence-block">
+              <span class="evidence-title">Evidencia</span>
+              <p>Simulación en Cisco Packet Tracer y montaje a pequeña escala con fibra óptica, router, puntos de acceso y portales cautivos.</p>
+            </div>
+            <div class="tools-list" aria-label="Herramientas">
+              <span class="tool-chip">Cisco Packet Tracer</span>
+              <span class="tool-chip">Subredes</span>
+              <span class="tool-chip">Fibra óptica</span>
+              <span class="tool-chip">Puntos de acceso</span>
+              <span class="tool-chip">Portales cautivos</span>
+            </div>
+            <div class="skill-foot">
+              <a href="#p-redes" class="skill-case-link">Ver caso aplicado <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- Habilidad 03 -->
+          <article class="skill-card" id="h-bd">
+            <div class="skill-head">
+              <span class="skill-index">03</span>
+              <span class="skill-type">Técnica</span>
+            </div>
+            <h3>Bases de datos SQL y API REST</h3>
+            <p class="skill-summary">
+              Modelado relacional de tablas, consultas SQL e integración con servicios web API REST y apoyo de IA.
+            </p>
+            <div class="evidence-block">
+              <span class="evidence-title">Evidencia</span>
+              <p>Base de datos relacional conectada a catálogo web y consultas analíticas validadas con IA.</p>
+            </div>
+            <div class="tools-list" aria-label="Herramientas">
+              <span class="tool-chip">PostgreSQL</span>
+              <span class="tool-chip">MySQL</span>
+              <span class="tool-chip">SQLite</span>
+              <span class="tool-chip">Supabase / API REST</span>
+            </div>
+            <div class="skill-foot">
+              <a href="#p-bd" class="skill-case-link">Ver caso aplicado <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- Habilidad 04 -->
+          <article class="skill-card" id="h-soporte">
+            <div class="skill-head">
+              <span class="skill-index">04</span>
+              <span class="skill-type">Técnica</span>
+            </div>
+            <h3>Soporte y gestión de tickets (Zoho Desk)</h3>
+            <p class="skill-summary">
+              Registro, seguimiento y resolución estructurada de requerimientos e incidencias técnicas.
+            </p>
+            <div class="evidence-block">
+              <span class="evidence-title">Evidencia</span>
+              <p>Trazabilidad completa de casos, evidencias técnicas y protocolos de entrega de equipos.</p>
+            </div>
+            <div class="tools-list" aria-label="Herramientas">
+              <span class="tool-chip">Zoho Desk</span>
+              <span class="tool-chip">Excel</span>
+              <span class="tool-chip">Word</span>
+              <span class="tool-chip">Protocolos de entrega</span>
+            </div>
+            <div class="skill-foot">
+              <a href="#p-soporte" class="skill-case-link">Ver caso aplicado <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- Habilidad 05 -->
+          <article class="skill-card" id="h-comunicacion">
+            <div class="skill-head">
+              <span class="skill-index">05</span>
+              <span class="skill-type">Personal</span>
+            </div>
+            <h3>Comunicación asertiva y control emocional</h3>
+            <p class="skill-summary">
+              Atención clara, empática y ordenada frente a usuarios e incidencias técnicas.
+            </p>
+            <div class="evidence-block">
+              <span class="evidence-title">Evidencia</span>
+              <p>Redacción de guías técnicas comprensibles y comunicación efectiva en procesos de soporte y entrega.</p>
+            </div>
+            <div class="tools-list" aria-label="Herramientas">
+              <span class="tool-chip">Comunicación asertiva</span>
+              <span class="tool-chip">Control emocional</span>
+              <span class="tool-chip">Liderazgo</span>
+              <span class="tool-chip">Responsabilidad</span>
+              <span class="tool-chip">Aprendizaje continuo</span>
+            </div>
+            <div class="skill-foot">
+              <a href="#p-soporte" class="skill-case-link">Ver caso aplicado <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. SECCIÓN #CASOS ("Casos · Reto, acción y resultado")
+         ====================================================================== -->
+    <section id="casos" class="section section-alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Proyectos aplicados</span>
+          <h2>Casos · Reto, acción y resultado</h2>
+        </div>
+
+        <div class="cases-list">
+          <!-- Caso 01 -->
+          <article class="case-card" id="p-bd">
+            <aside class="case-sidebar" aria-label="Indicador del caso 01">
+              <span class="case-date">Sep 2026 · Proyecto universitario</span>
+              <div>
+                <div class="case-metric">SQL + API</div>
+                <p class="case-metric-sub">Modelo relacional e integración web</p>
+              </div>
+            </aside>
+
+            <div class="case-main">
+              <h3>Base de datos relacional y API con IA</h3>
+
+              <div class="case-triad">
+                <div class="triad-box">
+                  <span class="triad-label">Reto</span>
+                  <p>Estructurar datos de clientes, productos y pedidos manteniendo integridad relacional y consultas ágiles.</p>
+                </div>
+                <div class="triad-box">
+                  <span class="triad-label">Acción</span>
+                  <p>Diseñé una base de datos SQL con entidades relacionadas, expuse los datos mediante una API REST conectada a un catálogo web y validé consultas analíticas con apoyo de IA.</p>
+                </div>
+                <div class="triad-box triad-box-result">
+                  <span class="triad-label">Resultado</span>
+                  <p>Sistema relacional operativo con consultas automatizadas e interfaz web conectada en tiempo real.</p>
+                </div>
+              </div>
+
+              <div class="case-tags-row">
+                <span class="case-tags-label">Habilidades vinculadas:</span>
+                <a href="#h-bd" class="skill-anchor-tag">Bases de datos SQL y API REST</a>
+                <a href="#h-soporte" class="skill-anchor-tag">Soporte y gestión de tickets (Zoho Desk)</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Caso 02 -->
+          <article class="case-card" id="p-redes">
+            <aside class="case-sidebar" aria-label="Indicador del caso 02">
+              <span class="case-date">Jul 2026 · Proyecto universitario</span>
+              <div>
+                <div class="case-metric">2 redes</div>
+                <p class="case-metric-sub">Invitados y administrativa aisladas</p>
+              </div>
+            </aside>
+
+            <div class="case-main">
+              <h3>Infraestructura de red para biblioteca</h3>
+
+              <div class="case-triad">
+                <div class="triad-box">
+                  <span class="triad-label">Reto</span>
+                  <p>Diseñar una red segmentada y segura para biblioteca diferenciando el acceso de visitantes y personal administrativo.</p>
+                </div>
+                <div class="triad-box">
+                  <span class="triad-label">Acción</span>
+                  <p>Simulé la topología en Cisco Packet Tracer y la implementé a pequeña escala con fibra óptica, router, puntos de acceso, subredes separadas y portales cautivos distintos.</p>
+                </div>
+                <div class="triad-box triad-box-result">
+                  <span class="triad-label">Resultado</span>
+                  <p>Infraestructura segmentada funcional validada en simulación y montaje físico.</p>
+                </div>
+              </div>
+
+              <div class="case-tags-row">
+                <span class="case-tags-label">Habilidades vinculadas:</span>
+                <a href="#h-redes" class="skill-anchor-tag">Redes y simulación (Cisco Packet Tracer)</a>
+                <a href="#h-comunicacion" class="skill-anchor-tag">Comunicación asertiva y control emocional</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Caso 03 -->
+          <article class="case-card" id="p-soporte">
+            <aside class="case-sidebar" aria-label="Indicador del caso 03">
+              <span class="case-date">Mar – May 2026 · Proyecto universitario</span>
+              <div>
+                <div class="case-metric">100 %</div>
+                <p class="case-metric-sub">Trazabilidad y protocolo de entrega</p>
+              </div>
+            </aside>
+
+            <div class="case-main">
+              <h3>Mantenimiento y documentación técnica de equipos</h3>
+
+              <div class="case-triad">
+                <div class="triad-box">
+                  <span class="triad-label">Reto</span>
+                  <p>Atender fallos variados en equipos de cómputo garantizando respaldo técnico y verificación formal en cada caso.</p>
+                </div>
+                <div class="triad-box">
+                  <span class="triad-label">Acción</span>
+                  <p>Ejecuté diagnósticos y mantenimientos según cada falla, documentando paso a paso con evidencias, pruebas de funcionamiento y protocolo de entrega.</p>
+                </div>
+                <div class="triad-box triad-box-result">
+                  <span class="triad-label">Resultado</span>
+                  <p>Equipos operativos entregados con historial técnico completo y actas de prueba.</p>
+                </div>
+              </div>
+
+              <div class="case-tags-row">
+                <span class="case-tags-label">Habilidades vinculadas:</span>
+                <a href="#h-mantenimiento" class="skill-anchor-tag">Diagnóstico y mantenimiento de equipos</a>
+                <a href="#h-soporte" class="skill-anchor-tag">Soporte y gestión de tickets (Zoho Desk)</a>
+                <a href="#h-comunicacion" class="skill-anchor-tag">Comunicación asertiva y control emocional</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. SECCIÓN #TRAYECTORIA ("Experiencia, formación e idiomas")
+         ====================================================================== -->
+    <section id="trayectoria" class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Recorrido académico y práctico</span>
+          <h2>Experiencia, formación e idiomas</h2>
+        </div>
+
+        <div class="timeline" id="timelineBlock">
+          <div class="timeline-line" aria-hidden="true">
+            <div class="timeline-line-fill"></div>
+          </div>
+
+          <div class="timeline-list">
+            <article class="timeline-item">
+              <span class="timeline-date">2026 (Cursando)</span>
+              <h3>Técnico Laboral en Soporte Técnico · Universidad de La Sabana (Unisabana)</h3>
+              <p>Formación aplicada en soporte TI, redes, bases de datos y gestión de incidencias.</p>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-date">Mar 2026 – Sep 2026</span>
+              <h3>Proyectos Universitarios de TI</h3>
+              <p>Prácticas integrales en infraestructura de redes, bases de datos SQL con API/IA y soporte técnico documentado.</p>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-date">2025 (Finalizado)</span>
+              <h3>Técnico en Mecatrónica · Institución Educativa Aldemar Rojas Plazas</h3>
+              <p>Formación técnica en electrónica, automatización, diagnóstico y resolución de fallos.</p>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-date">Idiomas</span>
+              <h3>Español (Nativo) · Inglés (Nivel 2)</h3>
+              <p>Lectura de documentación técnica y comunicación en entornos de soporte TI.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. SECCIÓN #CONTACTO ("Construyamos resultados juntos")
+         ====================================================================== -->
+    <section id="contacto" class="section reveal">
+      <div class="container">
+        <div class="contact-panel">
+          <h2>Construyamos resultados juntos</h2>
+          <p class="contact-copy">
+            Estoy listo para aportar compromiso, orden técnico y aprendizaje continuo a tu equipo de soporte TI. Escríbeme o revisa mis repositorios en GitHub.
+          </p>
+
+          <div class="contact-buttons">
+            <a href="mailto:pradaalvarezmiguel.801@gmail.com?subject=Oportunidad%20Soporte%20TI%20Junior" class="btn btn-accent">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Enviar correo
+            </a>
+
+            <a href="https://github.com/MiguelAPrada" target="_blank" rel="noopener noreferrer" class="btn btn-ghost-light">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+              GitHub
+            </a>
+
+            <button type="button" class="btn btn-copy-email" id="copyEmailBtn" aria-label="Copiar correo electrónico">
+              Copiar correo
+            </button>
+          </div>
+
+          <p class="contact-email-text">pradaalvarezmiguel.801@gmail.com</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       7. PIE DE PÁGINA
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Miguel Ángel Prada Álvarez · Hecho con apoyo de IA</p>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       JAVASCRIPT VANILLA: Menú móvil, animaciones IntersectionObserver y copia
+       ======================================================================== -->
+  <script>
+    (function () {
+      const EMAIL = "pradaalvarezmiguel.801@gmail.com";
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // 1. Menú móvil accesible para pantallas desde 360px
+      const mobileToggle = document.getElementById("mobileToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener("click", function () {
+          const isOpen = navLinks.classList.toggle("is-open");
+          mobileToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            navLinks.classList.remove("is-open");
+            mobileToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && navLinks.classList.contains("is-open")) {
+            navLinks.classList.remove("is-open");
+            mobileToggle.setAttribute("aria-expanded", "false");
+            mobileToggle.focus();
+          }
+        });
+      }
+
+      // 2. Resaltado visual breve al navegar entre habilidades (#h-...) y casos (#p-...)
+      document.addEventListener("click", function (event) {
+        const anchor = event.target.closest('a[href^="#p-"], a[href^="#h-"]');
+        if (!anchor) return;
+        const target = document.getElementById(anchor.getAttribute("href").slice(1));
+        if (target) {
+          target.classList.add("anchor-focus");
+          setTimeout(function () {
+            target.classList.remove("anchor-focus");
+          }, 1500);
+        }
+      });
+
+      // 3. Animaciones sutiles con IntersectionObserver y conteo de indicadores
+      const revealBlocks = document.querySelectorAll(".reveal");
+      const timelineBlock = document.getElementById("timelineBlock");
+      const kpiCounters = document.querySelectorAll(".kpi-value[data-count]");
+
+      function runCounters() {
+        kpiCounters.forEach(function (el) {
+          const target = parseInt(el.getAttribute("data-count"), 10) || 0;
+          if (prefersReducedMotion) {
+            el.textContent = String(target);
+            return;
+          }
+          let count = 0;
+          el.textContent = "0";
+          const interval = setInterval(function () {
+            count += 1;
+            el.textContent = String(count);
+            if (count >= target) {
+              clearInterval(interval);
+            }
+          }, 140);
+        });
+      }
+
+      if (!prefersReducedMotion && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              if (entry.target.id === "trayectoria" && timelineBlock) {
+                timelineBlock.classList.add("active");
+              }
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        revealBlocks.forEach(function (block) {
+          observer.observe(block);
+        });
+      } else {
+        revealBlocks.forEach(function (block) {
+          block.classList.add("is-visible");
+        });
+        if (timelineBlock) {
+          timelineBlock.classList.add("active");
+        }
+      }
+
+      runCounters();
+
+      // 4. Botón "Copiar correo" con confirmación "¡Copiado!" sin alert()
+      const copyEmailBtn = document.getElementById("copyEmailBtn");
+      if (copyEmailBtn) {
+        copyEmailBtn.addEventListener("click", function () {
+          const helperInput = document.createElement("input");
+          helperInput.value = EMAIL;
+          document.body.appendChild(helperInput);
+          helperInput.select();
+
+          try {
+            document.execCommand("copy");
+            copyEmailBtn.textContent = "¡Copiado!";
+            copyEmailBtn.classList.add("is-copied");
+            setTimeout(function () {
+              copyEmailBtn.textContent = "Copiar correo";
+              copyEmailBtn.classList.remove("is-copied");
+            }, 2200);
+          } catch (error) {
+            copyEmailBtn.textContent = EMAIL;
+          }
+
+          document.body.removeChild(helperInput);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
